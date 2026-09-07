@@ -284,6 +284,20 @@
           ".pi/skills"
         ]
       },
+      "i18n-locale-management": {
+        "source": "iloveZzz/yss-ui",
+        "sourceType": "github",
+        "skillPath": "packages/skills/i18n-locale-management/SKILL.md",
+        "effectiveHash": "4eb887a7c84dc669ec10cafdf323ff91806af723be18cec08cb6fa7b1d5adcfa",
+        "sourceRevision": "c4d958f18cc947cb91cbe1bd48783fa4601cc18f",
+        "upstreamHash": "4eb887a7c84dc669ec10cafdf323ff91806af723be18cec08cb6fa7b1d5adcfa",
+        "targets": [
+          ".agents/skills",
+          ".codex/skills",
+          ".cursor/skills",
+          ".pi/skills"
+        ]
+      },
       "implement": {
         "source": "mattpocock/skills",
         "sourceType": "github",
@@ -854,7 +868,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-product-lifecycle/SKILL.md",
-        "effectiveHash": "bd8ef6b3eb3185ce91d464b2e6751ebcd76e4b486f1075202fd9c5b5ff4a3427",
+        "effectiveHash": "39b232fbccc70e984f193f09c803cfe5ae5f5c58f22525a23095bfc7e04a4676",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -995,7 +1009,7 @@
         "source": "iloveZzz/yss-ui",
         "sourceType": "github",
         "skillPath": "packages/skills/yss-ui-business-page-generation/SKILL.md",
-        "effectiveHash": "b4e545e219cd36a8b25b749cb8399b3bca82fd894764b3299249a1fc139a481a",
+        "effectiveHash": "1eaac0115e8c139d4836e2c41663a0fd5fd7488e3a6404abc8d2fa1d7e6ffcb3",
         "sourceRevision": "c4d958f18cc947cb91cbe1bd48783fa4601cc18f",
         "upstreamHash": "97ef56c4b60c0281039996ac582ab01987b4d2bbb89989662594a6ce8a77c95f",
         "adaptationRef": ".template-source/agents/yss-ui-skills-integration.md",

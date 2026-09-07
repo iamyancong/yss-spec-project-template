@@ -66,6 +66,13 @@ description: "生成或改造完整 YSS UI CRUD、列表、表单、详情或左
 - Orval 请求必须使用真实生成导出和 DTO；禁止 `if (res?.success)` 冗余包裹，也禁止在 `else`/`catch` 重复 `message.error`。
 - 页面、公共组件、内联样式、TS 渲染配置和 SVG 必须遵循 `theme-token-usage`；禁止硬编码品牌色及 hover/active/selected/focus 色阶，主色透明态必须由真实动态 Token 派生。
 - 页面包含导出、报表、模板或附件下载时必须遵循 `file-export-download`，使用 `handleBlobResponse(res.data, res.headers)`，并检查生成方法是否已包含 `responseType: 'blob'`。
+- **全链路国际化工厂函数规范（Critical）**：
+  - 若当前项目支持或启用了多语言（存在 `locales/` 目录或依赖了 `vue-i18n`），页面开发必须全链路遵循国际化规范，**严禁在模板、`constant.ts` 或 Hook 中硬编码中文**；
+  - 表格列定义统一采用 `createColumns(t)` 工厂函数，操作列采用 `createActionConfig(handlers, t)` 工厂函数；
+  - 分页 `pagination` 必须绑定 `showTotal: (total: number) => t('common.total', { total })`；
+  - 查询/编辑表单 Schema 采用 `createSearchSchema(t)` / `createFormSchema(t)` 工厂函数并由 `computed` 驱动；
+  - 页面所有操作按钮（查询、重置、新增、批量操作等）必须使用多语言词条；
+  - 业务新词条在 `locales/lang/{zh-CN,zh-TW,en-US}/` 中镜像对齐维护。
 - 若用户给出旧项目路径或截图，开发前必须先提取 UI/交互验收清单；交付前逐项对照，不允许只实现字段和接口。
 
 ## 页面骨架
@@ -98,6 +105,7 @@ description: "生成或改造完整 YSS UI CRUD、列表、表单、详情或左
 - [ ] 查询区按钮在外部 `.xxx__search-actions` 右对齐独占一行，缩窄后仍处于搜索卡片右下角。
 - [ ] 主题色、状态色、中性色及交互态使用动态 Token；未依赖未同步变量的固定色 fallback。
 - [ ] 导出下载使用 `handleBlobResponse`，且 Blob 配置、响应头、loading 与错误链路已验证。
+- [ ] 国际化多语言规范：在支持国际化的项目中，表格列定义、操作列配置、表单 Schema 均使用工厂函数结合 `computed` 驱动，分页 `showTotal`、按钮文案、枚举标签与校验提示无硬编码中文。
 - [ ] 已核对 Orval 真实导出，未使用 `if (res?.success)` 或重复错误 Toast。
 - [ ] 若有截图或旧项目参考，`daily` 已对同一任务的适用检查项核验当前参照、实现截图及差异；`governed` 已按 `case_id` 配对基准图、实现图、diff/mask 和差异解释。两者均记录适用交互、console warning、实际 `pnpm` 命令与退出码；`daily` 连同独立审查记回原 Ticket / PR。
 

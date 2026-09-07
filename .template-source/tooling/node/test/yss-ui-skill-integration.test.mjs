@@ -11,11 +11,11 @@ import {
 const manifestPath = `${ROOT}/.agents/skills/.yss-skills-manifest.json`;
 const strategicManifestPath = `${ROOT}/.agents/skills/.strategic-design-skills-manifest.json`;
 
-test("yss-ui 业务项目清单覆盖 13 个精选 app skills 与项目级 MCP 配置", () => {
+test("yss-ui 业务项目清单覆盖 14 个精选 app skills 与项目级 MCP 配置", () => {
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
   const contract = validateYssUiSkillManifest(manifest);
 
-  assert.equal(contract.skills.length, 13);
+  assert.equal(contract.skills.length, 14);
   assert.equal(contract.source_category, "app");
   assert.deepEqual(contract.excluded_categories, ["library"]);
   assert.deepEqual(contract.excluded_skills, [

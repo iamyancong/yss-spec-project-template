@@ -420,6 +420,12 @@ skills:
     instance_default_discoverable: true
     aliases: []
     impacts: [lifecycle]
+  - id: i18n-locale-management
+    layer: specialist
+    maturity: supported
+    instance_default_discoverable: false
+    aliases: []
+    impacts: [frontend]
   - id: implement
     layer: compatibility
     maturity: supported
